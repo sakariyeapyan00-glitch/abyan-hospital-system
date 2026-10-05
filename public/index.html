@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abyan Hospital - Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-hospital"></i>
+                <h1>Abyan Hospital</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#departments" class="nav-link">Departments</a></li>
+                <li><a href="#wards" class="nav-link">Wards</a></li>
+                <li><a href="#doctors" class="nav-link">Doctors</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-login" id="loginBtn">Login</button>
+                <button class="btn-register" id="registerPatientBtn">Register</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Welcome to Abyan Hospital</h2>
+            <p>Excellence in Healthcare Management</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="bookAppointmentHero">Book Appointment</button>
+                <button class="btn btn-secondary" id="registerPatientHero">Register Now</button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <h3 id="stat-departments">17</h3>
+                <p>Departments</p>
+            </div>
+            <div class="stat">
+                <h3 id="stat-doctors">8</h3>
+                <p>Expert Doctors</p>
+            </div>
+            <div class="stat">
+                <h3 id="stat-wards">6</h3>
+                <p>Modern Wards</p>
+            </div>
+            <div class="stat">
+                <h3 id="stat-patients">50+</h3>
+                <p>Active Patients</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments" id="departments">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Departments</h2>
+                <p>Comprehensive Healthcare Services</p>
+            </div>
+            <div class="departments-grid" id="departmentsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Wards Section -->
+    <section class="wards" id="wards">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hospital Wards</h2>
+                <p>Modern Facilities for Patient Care</p>
+            </div>
+            <div class="wards-grid" id="wardsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Doctors</h2>
+                <p>Highly Qualified Medical Professionals</p>
+            </div>
+            <div class="doctors-table">
+                <table id="doctorsTable">
+                    <thead>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <th>Department</th>
+                            <th>Specialization</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="doctorsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Complete Healthcare Solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Patient Registration</h3>
+                    <p>Easy registration to any ward in our hospital</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Ward Transfer</h3>
+                    <p>Seamless transfer between hospital wards</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Doctor Booking</h3>
+                    <p>Online and pre-booked doctor appointments</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pills"></i>
+                    <h3>Pharmacy</h3>
+                    <p>Complete pharmacy with QR code pricing</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-receipt"></i>
+                    <h3>Payment Receipt</h3>
+                    <p>Digital receipts for all payments</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>VIP Wards</h3>
+                    <p>Premium accommodations for VIP patients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hospital Dashboard</h2>
+                <p>Real-time Hospital Operations</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <i class="fas fa-building"></i>
+                    <h3 id="dash-departments">17</h3>
+                    <p>Departments</p>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3 id="dash-doctors">8</h3>
+                    <p>Doctors</p>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-bed"></i>
+                    <h3 id="dash-patients">50+</h3>
+                    <p>Patients</p>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-calendar"></i>
+                    <h3 id="dash-appointments">15</h3>
+                    <p>Appointments</p>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-home"></i>
+                    <h3 id="dash-vip">2</h3>
+                    <p>VIP Wards</p>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3 id="dash-revenue">$50K+</h3>
+                    <p>Total Revenue</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pharmacy Section -->
+    <section class="pharmacy">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hospital Pharmacy</h2>
+                <p>Medicine Pricing & Availability</p>
+            </div>
+            <div class="pharmacy-wrapper">
+                <div class="pharmacy-list">
+                    <h3>Available Medicines</h3>
+                    <div id="pharmacyList"></div>
+                </div>
+                <div class="qr-section">
+                    <h3>Medicine QR Code</h3>
+                    <div class="qr-display">
+                        <img id="qrCode" src="" alt="QR Code">
+                        <p id="qrInfo">Select a medicine to view its QR code and price</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders Section -->
+    <section class="orders">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ward Orders</h2>
+                <p>Medicine & Supply Management</p>
+            </div>
+            <div class="orders-wrapper">
+                <div class="order-form-section">
+                    <h3>Place New Order</h3>
+                    <form id="orderForm" class="form">
+                        <div class="form-group">
+                            <label>Select Ward</label>
+                            <select id="orderWardSelect" required>
+                                <option value="">-- Select Ward --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Item</label>
+                            <select id="orderItemSelect" required>
+                                <option value="">-- Select Item --</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="number" id="orderQuantity" min="1" value="1" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Place Order</button>
+                    </form>
+                </div>
+                <div class="orders-list-section">
+                    <h3>Recent Orders</h3>
+                    <div id="ordersList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Receipts Section -->
+    <section class="receipts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Payment Receipts</h2>
+                <p>Financial Records</p>
+            </div>
+            <div class="receipts-wrapper">
+                <div class="receipt-form-section">
+                    <h3>Issue Receipt</h3>
+                    <form id="receiptForm" class="form">
+                        <div class="form-group">
+                            <label>Patient Name</label>
+                            <input type="text" id="receiptPatientName" placeholder="Enter patient name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Amount</label>
+                            <input type="number" id="receiptAmount" placeholder="Enter amount" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <select id="receiptPaymentMethod">
+                                <option value="Card">Card</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Insurance">Insurance</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Issue Receipt</button>
+                    </form>
+                </div>
+                <div class="receipts-table-section">
+                    <h3>Recent Receipts</h3>
+                    <table class="receipts-table">
+                        <thead>
+                            <tr>
+                                <th>Receipt ID</th>
+                                <th>Patient</th>
+                                <th>Amount</th>
+                                <th>Method</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="receiptsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" id="closeLoginModal">&times;</span>
+            <h2>Hospital Login</h2>
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label>Role</label>
+                    <select id="loginRole" required>
+                        <option value="doctor">Doctor</option>
+                        <option value="admin">Admin</option>
+                        <option value="manager">Manager</option>
+                        <option value="reception">Reception</option>
+                        <option value="pharmacy">Pharmacy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="demo-info">Demo: Username: <strong>hani</strong> | Password: <strong>1234</strong></p>
+        </div>
+    </div>
+
+    <!-- Patient Registration Modal -->
+    <div class="modal" id="patientModal">
+        <div class="modal-content">
+            <span class="close" id="closePatientModal">&times;</span>
+            <h2>Register Patient</h2>
+            <form id="patientRegisterForm" class="form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="patientName" placeholder="Enter patient name" required>
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" id="patientAge" placeholder="Enter age" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select id="patientGender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select Ward</label>
+                    <select id="patientWardSelect" required>
+                        <option value="">-- Select Ward --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="patientPhone" placeholder="Enter phone number">
+                </div>
+                <button type="submit" class="btn btn-primary">Register Patient</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <span class="close" id="closeAppointmentModal">&times;</span>
+            <h2>Book Appointment</h2>
+            <form id="appointmentForm" class="form">
+                <div class="form-group">
+                    <label>Patient Name</label>
+                    <input type="text" id="appointmentPatientName" placeholder="Enter patient name" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Doctor</label>
+                    <select id="appointmentDoctorSelect" required>
+                        <option value="">-- Select Doctor --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="appointmentDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Time</label>
+                    <input type="time" id="appointmentTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Appointment Type</label>
+                    <select id="appointmentMode" required>
+                        <option value="Online Booking">Online Booking</option>
+                        <option value="Pre-booked">Pre-booked with Card</option>
+                        <option value="Home Visit">Home Visit</option>
+                        <option value="Workplace Visit">Workplace Visit</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select id="appointmentPaymentMethod" required>
+                        <option value="Card">Card</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Insurance">Insurance</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Transfer Patient Modal -->
+    <div class="modal" id="transferModal">
+        <div class="modal-content">
+            <span class="close" id="closeTransferModal">&times;</span>
+            <h2>Transfer Patient</h2>
+            <form id="transferForm" class="form">
+                <div class="form-group">
+                    <label>Select Patient</label>
+                    <select id="transferPatientSelect" required>
+                        <option value="">-- Select Patient --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Transfer To Ward</label>
+                    <select id="transferWardSelect" required>
+                        <option value="">-- Select Ward --</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Transfer Patient</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Abyan Hospital. All rights reserved.</p>
+            <p>Excellence in Healthcare Management</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
